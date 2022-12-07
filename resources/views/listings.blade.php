@@ -18,7 +18,11 @@
 <ul>
     @foreach ($listing as $item)
         <li>
-            <h3> {{ $item['title'] }}</h3>
+            <h3>
+                <a href="/news/{{ $item['id'] }}">
+                    {{ $item['title'] }}
+                </a>
+            </h3>
             <p>{{ $item['content'] }}</p>
         </li>
     @endforeach

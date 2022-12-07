@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,28 +22,13 @@ Route::get('/', function () {
 Route::get('/listings', function () {
     return view('listings', [
         "heading" => "Latest News",
-        "listing" => [
-            // [
-            //     "id" => 1,
-            //     "title" => "First News",
-            //     "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-            // ],
-            // [
-            //     "id" => 2,
-            //     "title" => "Second News",
-            //     "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-            // ],
-            // [
-            //     "id" => 3,
-            //     "title" => "Third News",
-            //     "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-            // ],
-            // [
-            //     "id" => 4,
-            //     "title" => "Fourth News",
-            //     "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-            // ],
-        ]
+        "listing" => News::all()
+    ]);
+});
+
+Route::get('/news/{id}', function ($id) {
+    return view('news', [
+        "news" => News::find($id)
     ]);
 });
 
