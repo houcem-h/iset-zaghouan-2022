@@ -9,16 +9,16 @@ class ListingController extends Controller
 {
     public function index()
     {
-        return view('listings', [
-            "heading" => "Latest News",
-            "listing" => Listing::all()
+        return view('listings.index', [
+            "heading" => "Latest jobs Listing",
+            "listings" => Listing::all()
         ]);
     }
 
     public function show($id)
     {
-        return view('news', [
-            "news" => Listing::find($id)
+        return view('listings.show', [
+            "listing" => Listing::find($id)
         ]);
     }
 }

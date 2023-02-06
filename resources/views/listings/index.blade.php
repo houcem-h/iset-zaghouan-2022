@@ -11,12 +11,12 @@
 
 {{-- affichage avec la syntaxe de Blade --}}
 <h1>{{ $heading }}</h1>
-@if (count($listing) == 0)
+@if (count($listings) == 0)
     <p>Il y a aucun éléments dans la liste</p>
 
 @else
 <ul>
-    @foreach ($listing as $item)
+    @foreach ($listings as $item)
         <li>
             <h3>
                 <a href="/listings/{{ $item['id'] }}">
