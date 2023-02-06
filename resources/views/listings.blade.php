@@ -23,7 +23,7 @@
                     {{ $item['title'] }}
                 </a>
             </h3>
-            <p>{{ $item['content'] }}</p>
+            <p>{{ $item['description'] }}</p>
         </li>
     @endforeach
 </ul>
