@@ -19,7 +19,7 @@
     @foreach ($listing as $item)
         <li>
             <h3>
-                <a href="/news/{{ $item['id'] }}">
+                <a href="/listings/{{ $item['id'] }}">
                     {{ $item['title'] }}
                 </a>
             </h3>
