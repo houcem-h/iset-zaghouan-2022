@@ -17,12 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('tags');
-            $table->string('company');
-            $table->string('location');
-            $table->string('email');
-            $table->string('website');
+            $table->integer('position_number');
+            $table->string('job_location');
             $table->longText('description');
+            // $table->unsignedBigInteger('company_id');
+            // ou bien:
+            $table->bigInteger('company_id')->unsigned();
             $table->timestamps();
+            $table->foreign('company_id')->references('id')->on('companies');
         });
     }
 
