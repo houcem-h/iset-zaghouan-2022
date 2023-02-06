@@ -29,7 +29,7 @@
 </ul>
 @endif
 
-@unless (count($listing) == 0)
+{{-- @unless (count($listing) == 0)
 <ul>
     @foreach ($listing as $item)
         <li>
@@ -42,5 +42,5 @@
 @else
 <p>Il y a aucun éléments dans la liste</p>
 
-@endif
+@endif --}}
 
