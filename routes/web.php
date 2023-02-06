@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\News;
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,13 +22,13 @@ Route::get('/', function () {
 Route::get('/listings', function () {
     return view('listings', [
         "heading" => "Latest News",
-        "listing" => News::all()
+        "listing" => Listing::all()
     ]);
 });
 
 Route::get('/news/{id}', function ($id) {
     return view('news', [
-        "news" => News::find($id)
+        "news" => Listing::find($id)
     ]);
 });
 

@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-class News
+class Listing
 {
-    public static $news = [
+    public static $listings = [
         [
             "id" => 1,
             "title" => "First News",
@@ -29,12 +29,12 @@ class News
 
     public static function all()
     {
-        return collect(self::$news);
+        return collect(self::$listings);
     }
 
     public static function find($id)
     {
-        $news = static::all();
-        return $news->firstWhere('id', $id);
+        $listings = static::all();
+        return $listings->firstWhere('id', $id);
     }
 }
