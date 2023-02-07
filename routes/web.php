@@ -37,8 +37,15 @@ Route::get('/', function () {
 
 //--------------------NEW SYNTAX----------------------------------------
 //--------------------Listing Routes----------------------------------------
+// Route::get('/listings', [ListingController::class, 'index'])->middleware('auth'); // use auth middleware
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/{id}', [ListingController::class, 'show']);
+
+//-------------- an other way to use middleware
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::get('/listings', [ListingController::class, 'index']);
+//     Route::get('/listings/{id}', [ListingController::class, 'show']);
+// });
 
 
 //--------------------Company Routes----------------------------------------
