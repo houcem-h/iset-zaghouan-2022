@@ -18,6 +18,8 @@ class ListingController extends Controller
     {
         return view('listings.index', [
             "heading" => "Latest jobs Listing",
+            /* Using the paginate method to limit the number of listings to 9 per page. */
+            // "listings" => Listing::paginate(9)
             "listings" => Listing::all()
         ]);
     }

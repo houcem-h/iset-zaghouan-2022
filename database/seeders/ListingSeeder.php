@@ -18,19 +18,23 @@ class ListingSeeder extends Seeder
     {
         DB::table('listings')->insert([
             'title' => 'Senior Laravel Developper',
-            'tags' => 'Laravel, PHP',
+            'tags' => 'Laravel PHP',
             'position_number' => 1,
             'job_location' => 'Lagos, Nigeria',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'company_id' => 1
+            'company_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         DB::table('listings')->insert([
             'title' => 'Full-stack Developper',
-            'tags' => 'Laravel, PHP, Vue.js, javascript',
+            'tags' => 'Laravel PHP Vue.js javascript',
             'position_number' => 2,
             'job_location' => 'Turkey, Istanbul',
             'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-            'company_id' => 2
+            'company_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         Listing::factory(20)->create();
     }

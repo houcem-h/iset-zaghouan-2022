@@ -19,11 +19,12 @@ class ListingFactory extends Factory
     {
         return [
             'title' => fake()->jobTitle(),
-            'tags' => fake()->jobTitle(),
+            'tags' => fake()->words(4, true),
             'position_number' => fake()->numberBetween(1, 10),
             'job_location' => fake()->city(),
             'description' => fake()->paragraph(),
-            'company_id' => Company::get()->random()->id
+            'company_id' => Company::get()->random()->id,
+            'created_at' => fake()->dateTimeBetween('-1 years', 'now'),
         ];
     }
 }
