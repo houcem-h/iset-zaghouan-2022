@@ -41,9 +41,17 @@ class ListingController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
-        Listing::create($request->all());
+        // Listing::create($request->all());
+        // alternatively
+        $listing = new Listing();
+        $listing->title = $request->title;
+        $listing->tags = $request->tags;
+        $listing->position_number = $request->position_number;
+        $listing->job_location = $request->job_location;
+        $listing->description = $request->description;
+        $listing->company_id = $request->company_id;
+        $listing->save();
 
-        return redirect('/listings');
+        return redirect('/listings/' . $listing->id)->with('AddListing', 'New listing added successfully.');;
     }
 }
