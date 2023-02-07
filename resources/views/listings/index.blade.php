@@ -1,3 +1,11 @@
+@extends('layouts.app')
+
+@section('pagename')
+<a class="navbar-brand" href="{{ url('/') }}">Listings</a>
+@endsection
+
+@section('content')
+
 {{-- affichage avec PHP natif --}}
 <h1><?php //echo $heading ?></h1>
 <ul>
@@ -44,3 +52,4 @@
 
 @endif --}}
 
+@endsection
