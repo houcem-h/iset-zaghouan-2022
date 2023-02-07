@@ -35,15 +35,21 @@ Route::get('/', function () {
 // });
 
 //--------------------NEW SYNTAX----------------------------------------
+//--------------------Listing Routes----------------------------------------
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/{id}', [ListingController::class, 'show']);
-Route::get('/listings/create', [ListingController::class, 'create']);
-Route::post('/listings', [ListingController::class, 'store']);
-Route::get('/listings/{id}/edit', [ListingController::class, 'edit']);
-Route::put('/listings', [ListingController::class, 'update']);
-Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
 
-Route::resource('listings', ListingController::class);
+
+//--------------------Company Routes----------------------------------------
+// Route::get('/companies', [CompanyController::class, 'index']);
+// Route::get('/companies/{id}', [CompanyController::class, 'show']);
+// Route::get('/companies/create', [CompanyController::class, 'create']);
+// Route::post('/companies', [CompanyController::class, 'store']);
+// Route::get('/companies/{id}/edit', [CompanyController::class, 'edit']);
+// Route::put('/companies', [CompanyController::class, 'update']);
+// Route::delete('/companies/{id}', [CompanyController::class, 'destroy']);
+// ---------------- this line bellow replaces all the lines above
+Route::resource('listings', CompanyController::class);
 
 
 Route::get('/hello', function () {
