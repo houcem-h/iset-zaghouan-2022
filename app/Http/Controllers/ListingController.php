@@ -38,4 +38,12 @@ class ListingController extends Controller
             "companies" => Company::select('id', 'name')->get()
         ]);
     }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+        Listing::create($request->all());
+
+        return redirect('/listings');
+    }
 }

@@ -41,6 +41,7 @@ Route::get('/', function () {
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
 Route::get('/listings/{id}', [ListingController::class, 'show']);
+Route::post('/listings', [ListingController::class, 'store']);
 
 //-------------- an other way to use middleware
 // Route::group(['middleware' => ['auth']], function () {
