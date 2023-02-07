@@ -3,6 +3,7 @@
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ListingController;
 
 /*
@@ -49,7 +50,7 @@ Route::get('/listings/{id}', [ListingController::class, 'show']);
 // Route::put('/companies', [CompanyController::class, 'update']);
 // Route::delete('/companies/{id}', [CompanyController::class, 'destroy']);
 // ---------------- this line bellow replaces all the lines above
-Route::resource('listings', CompanyController::class);
+Route::resource('companies', CompanyController::class);
 
 
 Route::get('/hello', function () {
