@@ -20,7 +20,7 @@ class ListingController extends Controller
             "heading" => "Latest jobs Listing",
             /* Using the paginate method to limit the number of listings to 9 per page. */
             // "listings" => Listing::paginate(9)
-            "listings" => Listing::all()
+            "listings" => Listing::with('company')->get()
         ]);
     }
 

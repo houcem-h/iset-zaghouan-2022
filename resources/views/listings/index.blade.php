@@ -41,6 +41,9 @@
                             <p class="card-text">{{ $item['title'] }}</p>
                         </a>
                         <div>
+                            <i class="bi bi-buildings"></i> {{ $item->company->name }}
+                        </div>
+                        <div>
                             <i class="bi bi-pin-map"></i> {{ $item['job_location'] }}
                         </div>
                         <div class="py-2">
