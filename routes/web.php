@@ -37,6 +37,13 @@ Route::get('/', function () {
 //--------------------NEW SYNTAX----------------------------------------
 Route::get('/listings', [ListingController::class, 'index']);
 Route::get('/listings/{id}', [ListingController::class, 'show']);
+Route::get('/listings/create', [ListingController::class, 'create']);
+Route::post('/listings', [ListingController::class, 'store']);
+Route::get('/listings/{id}/edit', [ListingController::class, 'edit']);
+Route::put('/listings', [ListingController::class, 'update']);
+Route::delete('/listings/{id}', [ListingController::class, 'destroy']);
+
+Route::resource('listings', ListingController::class);
 
 
 Route::get('/hello', function () {
