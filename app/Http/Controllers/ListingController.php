@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 
@@ -28,6 +29,13 @@ class ListingController extends Controller
     {
         return view('listings.show', [
             "listing" => Listing::find($id)
+        ]);
+    }
+
+    public function create()
+    {
+        return view('listings.create', [
+            "companies" => Company::select('id', 'name')->get()
         ]);
     }
 }

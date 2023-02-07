@@ -39,6 +39,7 @@ Route::get('/', function () {
 //--------------------Listing Routes----------------------------------------
 // Route::get('/listings', [ListingController::class, 'index'])->middleware('auth'); // use auth middleware
 Route::get('/listings', [ListingController::class, 'index']);
+Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
 Route::get('/listings/{id}', [ListingController::class, 'show']);
 
 //-------------- an other way to use middleware
