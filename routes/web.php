@@ -73,3 +73,7 @@ Route::get('/posts/{id}', function ($x) {
 Route::get('/search', function (Request $request) {
     return "Search for " . $request->name . " from " . $request->city;
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
