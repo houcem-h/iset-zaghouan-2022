@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,7 @@ Route::post('/listings', [ListingController::class, 'store']);
 // Route::delete('/companies/{id}', [CompanyController::class, 'destroy']);
 // ---------------- this line bellow replaces all the lines above
 Route::resource('companies', CompanyController::class);
+
 
 
 Route::get('/hello', function () {
